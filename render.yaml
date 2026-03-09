@@ -12,7 +12,3 @@ services:
         sync: false
       - key: DATA_ROOT
         value: /data/geopol
-    disk:
-      name: geopol-data
-      mountPath: /data/geopol
-      sizeGB: 1
