@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: geopol-api
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: NEWSAPI_KEY
+        sync: false
+      - key: DATA_ROOT
+        value: /data/geopol
+    disk:
+      name: geopol-data
+      mountPath: /data/geopol
+      sizeGB: 1
